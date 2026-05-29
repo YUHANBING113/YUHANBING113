@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  color: #dbbf72;
+  line-height: 1.6;
+}
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  background-color: transparent;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+
+
+#navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+#hero {
+  height: 100vh;
+  background-color: #fa5336;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: slideUpFade 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+#hero p {
+ opacity: 0; 
+ animation: slideUpFade 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+
+@keyframes slideUpFade {
+ 0% {
+ opacity: 0;
+ transform: translateY(40px); /* 40px 아래에서 시작 */
+ }
+ 100% {
+ opacity: 1;
+ transform: translateY(0); /* 원래 자리로 */
+ }
+}
+
+/* 프로젝트 보기 버튼 스타일 */
+#hero a {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #eed652;
+  /* 按钮背景色 */
+  color: #f54e4e;
+  /* 按钮文字颜色 */
+  transition: all 0.3s ease;
+}
+
+#hero a:hover {
+  background-color: #f8d972;
+  /* 鼠标悬停时背景色 */
+  color: #f0d457;
+  /* 鼠标悬停时文字颜色 */
+}
+
+
+#about {
+  padding: 300px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#about img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+#projects {
+  padding: 2% 0.5%;
+  background-color: #ff0000;
+  text-align: center;
+}
+
+#projects img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.modal-content h2 {
+  color: #050917;
+}
+
+.modal-content p {
+  color: #020202;
+}
+
+
+
+#projects ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px auto;
+  max-width: 90%;
+}
+
+
+#projects li {
+  background-color: #ff0000;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 내용물(버튼 포함)이 좌우로 늘어나지
+않고 가운데로 예쁘게 모이게 합니다. */
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+/* 부드러운 전환 준비 */
+}
+
+#projects li:hover {
+ transform: translateY(-8px);
+ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+/* 이미지는 살짝 확대됨 */
+#projects li img {
+ /* ... 기존 코드 ... */
+ transition: transform 0.5s ease;
+}
+#projects li:hover img {
+ transform: scale(1.03); /* 3%만 살짝 확대 (너무 크면 촌스
+러움) */
+}
+
+
+#projects li img
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+
+}
+
+#projects li button {
+  margin-top: auto;
+  /* 제목이나 설명 글씨 길이가 달라도, 버튼
+을 카드 맨 하단으로 가지런히 밀어냅니다. */
+}
+
+#projects li:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+ }
+
+
+
+ 
+
+
+
+
+
+
+#contact {
+  background-color: #eed171;
+  color: #ff2424ce;
+  padding: 80px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#contact h2 {
+  font-size: 2rem;
+}
+
+#contact a {
+  display: inline-block;
+  background-color: #fa0505;
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#contact a:hover {
+  background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #projects ul {
+    flex-direction: column;
+  }
+}
+
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(252, 2, 2);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+
+.modal-overlay.show {
+  display: flex;
+}
+
+/* --- 모달 내용물 --- */
+.modal-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close-modal-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #626c76;
+  color: rgb(108, 110, 116);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+button {
+  background-color: #ffe369;
+  color: #a8a7a7;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+button:hover {
+  background-color: #ffe364;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.close-modal-btn {
+  background-color: #ff4545;
+}
+
+.close-modal-btn:hover {
+  background-color: #f7d066;
+}
+/* style.css 상단 */
+/* 웹사이트 전체의 기본 마우스 숨기기 */
+
+/* 우리가 만든 가짜 마우스 커서 디자인 */
+.custom-cursor {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 20px;
+ height: 20px;
+ background-color: #007bff; /* 파란색 지정 */
+ border-radius: 50%;
+ z-index: 10000;
+ pointer-events: none; /* 클릭 방해 금지 */
+ transition: transform 0.3s ease, background-color 0.3s ease;
+ transform: translate(-50%, -50%);
+}
+
+
